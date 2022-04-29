@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: lightblue;
+}
+
+section{
+    margin: auto;
+    width: 70%;
+    text-align: center;
+}
+
+.container {  
+    display: grid;
+    width: 90%;
+    height: 25em;
+    margin: auto;
+    margin-top: 2rem;
+    text-align: center;
+    grid-template-columns: auto auto auto;
+    background-color: #2196F3;
+    padding: 10px;
+    gap: 0.3em 0.3em;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". . ."
+      ". . ."
+      ". . .";
+  }
+
+  .slot{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
