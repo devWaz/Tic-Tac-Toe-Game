@@ -9,20 +9,19 @@ body{
 }
 
 section{
-    margin: auto;
-    width: 70%;
     border: 1px solid red;
     text-align: center;
 }
 
 .container {  
     display: grid;
-    width: 40rem;
-    height: 25em;
+    width: 25rem;
+    height: 25rem;
     margin: auto;
     margin-top: 2rem;
     text-align: center;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 7.7rem 7.7rem 7.7rem;
+    grid-template-rows: 7.7rem 7.7rem 7.7rem;
     background-color: #2196F3;
     padding: 10px;
     gap: 0.3em 0.3em;
@@ -35,7 +34,7 @@ section{
 
   .slot{
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
+    /* padding: 20px; */
     font-size: 30px;
     text-align: center;
   }
