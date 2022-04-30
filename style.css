@@ -11,12 +11,13 @@ body{
 section{
     margin: auto;
     width: 70%;
+    border: 1px solid red;
     text-align: center;
 }
 
 .container {  
     display: grid;
-    width: 90%;
+    width: 40rem;
     height: 25em;
     margin: auto;
     margin-top: 2rem;
