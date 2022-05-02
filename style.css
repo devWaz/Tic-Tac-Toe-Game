@@ -10,7 +10,7 @@
 }
 
 body{
-    background-color: lightblue;
+    /* background-color: #5a82fc; */
 }
 
 section{
@@ -18,18 +18,22 @@ section{
     text-align: center;
 }
 
-.container {  
+.board {  
     display: grid;
     width: 25rem;
     height: 25rem;
     margin: auto;
     margin-top: 2rem;
+    justify-content: center;
+    align-content: center;
+    /* justify-items: center; */
+    /* align-items: center; */
     text-align: center;
     grid-template-columns: 7.7rem 7.7rem 7.7rem;
     grid-template-rows: 7.7rem 7.7rem 7.7rem;
-    background-color: #2196F3;
-    padding: 10px;
-    gap: 0.3em 0.3em;
+    /* background-color: black; */
+    /* padding: 10px; */
+    /* gap: 0.3em 0.3em; */
     grid-auto-flow: row;
     grid-template-areas:
       ". . ."
@@ -44,8 +48,30 @@ section{
   }
 
   .slot{
-    background-color: lightblue;
+    background-color: white;
     padding: 30px;
     font-size: 50px;
     text-align: center;
+    border: 1px solid black;
   }
+
+  .slot:first-child,
+  .slot:nth-child(2),
+  .slot:nth-child(3){
+      border-top: none;
+  }
+
+  .slot:nth-child(3n + 1){
+      border-left: none;
+  }
+
+  .slot:nth-child(3n + 3){
+    border-right: none;
+}
+
+
+.slot:last-child,
+.slot:nth-child(8),
+.slot:nth-child(7){
+    border-bottom: none;
+}
