@@ -21,7 +21,6 @@ section{
 
 .board {  
     display: grid;
-    border: 1px solid red;
     width: 25rem;
     height: 25rem;
     margin: auto;
@@ -104,7 +103,7 @@ section{
 
 
 /* Mobile screen  */
-@media screen and (max-width:390px){
+@media screen and (max-width:375px){
     section h1{
         margin-top: 2rem;
         font-size: 35px;
@@ -113,8 +112,8 @@ section{
 
       .board {  
         display: grid;
-        width: 15rem;
-        height: 15rem;
+        width: 16rem;
+        height: 16rem;
         margin-top: 2rem;
         text-align: center;
         grid-template-columns: 1fr 1fr 1fr;
