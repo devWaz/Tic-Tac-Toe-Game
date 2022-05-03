@@ -21,6 +21,7 @@ section{
 
 .board {  
     display: grid;
+    border: 1px solid red;
     width: 25rem;
     height: 25rem;
     margin: auto;
@@ -81,7 +82,16 @@ section{
     content: '';
     width: calc( var(--mark-size)* .15);
     height: var(--mark-size);
-    background-color: rgb(204, 3, 3);
+    background-color: red;
+    position: absolute;
+}
+
+.slot.x::before{
+    transform: rotate(45deg);
+}
+
+.slot.x::after{
+    transform: rotate(-45deg);
 }
 
 
@@ -93,11 +103,8 @@ section{
 
 
 
-
-
-
 /* Mobile screen  */
-@media screen and (max-width:360px){
+@media screen and (max-width:390px){
     section h1{
         margin-top: 2rem;
         font-size: 35px;
