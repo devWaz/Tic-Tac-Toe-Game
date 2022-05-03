@@ -10,20 +10,25 @@
 <body>
     <section>
         <h1>TIC-TAC-TOE</h1>
+        
         <div class="board">
-            <div class="slot x"></div>
-            <div class="slot o"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
-            <div class="slot"></div>
+            <div class="slot x" data-cell></div>
+            <div class="slot o" data-cell></div>
+            <div class="slot" data-cell></div>
+            <div class="slot" data-cell></div>
+            <div class="slot" data-cell></div>
+            <div class="slot" data-cell></div>
+            <div class="slot" data-cell></div>
+            <div class="slot" data-cell></div>
+            <div class="slot" data-cell></div>
           </div>
+          <h5> @devWaz</h5>     
     </section>
 
-
+    <div class="win-message" id="winMessage">
+        <div data-winning-message-text=""></div>
+        <button id="restartButton">Restart</button>
+    </div>
 
 
 

@@ -76,24 +76,62 @@ section{
 }
 
 .slot.x::before,
-.slot.x::after
+.slot.x::after{
+    background-color: black;
+}
+
+.cell.x, .cell.o{
+    cursor: not-allowed;
+}
+
+.board.x .slot:hover{
+     
+}
+
+.slot.x::before,
+.slot.x::after,
+.board.x .slot:hover::before,
+.board.x .slot:hover::after
 {
     content: '';
     width: calc( var(--mark-size)* .15);
     height: var(--mark-size);
-    background-color: red;
+    background-color: blue;
     position: absolute;
 }
 
-.slot.x::before{
+.slot.x::before,
+.board.x .slot:hover::before
+{
     transform: rotate(45deg);
 }
 
-.slot.x::after{
+.slot.x::after,
+.board.x .slot:hover::after{
     transform: rotate(-45deg);
 }
 
+.slot.o::before,
+.slot.o::after
+{
+    content: '';
+    width:  var(--mark-size);
+    height: var(--mark-size);
+    border-radius: 50%;
+    position: absolute;
+}
 
+.slot.o::before{
+    width:  var(--mark-size);
+    height: var(--mark-size);
+    background-color: green;
+}
+
+.slot.o::after{
+    width:  calc(var(--mark-size) * .7);
+    height:  calc(var(--mark-size) * .7);
+    background-color: white;
+}
 
 
 
