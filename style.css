@@ -21,11 +21,11 @@ section {
 
 .board {
     display: grid;
-    width: 100vw; /*25rem*/
-    height: 100vh;
-    /* margin: auto; */
-    margin-top: -5rem;
-    margin-bottom: -5rem;
+    width: 25rem; 
+    height: 25rem;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
     justify-content: center;
     align-content: center;
     grid-template-columns:  7.7rem 7.7rem 7.7rem;
@@ -63,16 +63,10 @@ section h1 {
     border-right: none;
 }
 
-
 .slot:last-child,
 .slot:nth-child(8),
 .slot:nth-child(7) {
     border-bottom: none;
-}
-
-.slot.x::before,
-.slot.x::after {
-    background-color: black;
 }
 
 .slot.x,
@@ -80,16 +74,8 @@ section h1 {
     cursor: not-allowed;
 }
 
-.board.x .slot:not(.x):not(.o):hover::before,
-.board.x .slot:not(.x):not(.o):hover::after,
-.board.o .slot:not(.x):not(.o):hover::before {
-  background-color: lightgrey;
-}
-
 .slot.x::before,
-.slot.x::after,
-.board.x .slot:not(.x):not(.o):hover::before,
-.board.x .slot:not(.x):not(.o):hover::after {
+.slot.x::after {
     content: '';
     width: calc(var(--mark-size)* .15);
     height: var(--mark-size);
@@ -98,7 +84,7 @@ section h1 {
 }
 
 .slot.x::before,
-.board.x .slot:not(.x):not(.o):hover::before {
+.board.x  {
     transform: rotate(45deg);
 }
 
@@ -108,9 +94,7 @@ section h1 {
 }
 
 .slot.o::before,
-.slot.o::after,
-.board.o .slot:not(.x):not(.o):hover::before,
-.board.o .slot:not(.x):not(.o):hover::after {
+.slot.o::after {
     content: '';
     border-radius: 50%;
     position: absolute;
@@ -141,7 +125,6 @@ section h1 {
         display: grid;
         width: 12rem;
         height: 12rem;
-        
         text-align: center;
         margin: auto;
         margin-top: 8rem;
