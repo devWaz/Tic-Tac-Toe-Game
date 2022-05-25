@@ -21,14 +21,14 @@ section {
 
 .board {
     display: grid;
-    width: 25rem; 
+    width: 25rem;
     height: 25rem;
     margin: auto;
     margin-top: 2rem;
     margin-bottom: 1rem;
     justify-content: center;
     align-content: center;
-    grid-template-columns:  7.7rem 7.7rem 7.7rem;
+    grid-template-columns: 7.7rem 7.7rem 7.7rem;
     grid-template-rows: 7.7rem 7.7rem 7.7rem;
 }
 
@@ -84,7 +84,7 @@ section h1 {
 }
 
 .slot.x::before,
-.board.x  {
+.board.x {
     transform: rotate(45deg);
 }
 
@@ -112,6 +112,38 @@ section h1 {
     background-color: white;
 }
 
+.win-message {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .9);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 5rem;
+    flex-direction: column;
+}
+
+.win-message button {
+    font-size: 2rem;
+    background-color: white;
+    border: 1px solid black;
+    padding: .25em .5em;
+    cursor: pointer;
+}
+
+.win-message button:hover {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+.win-message .show {
+    display: flex;
+}
 
 /* Mobile screen  */
 @media screen and (max-width:375px) {
