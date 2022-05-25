@@ -11,8 +11,8 @@
 
 
 :root{
-    --cell-size: 100px;
-    --mark-size: calc(var(--cell-size) * .9);
+    --slot-size: 100px;
+    --mark-size: calc(var(--slot-size) * .9);
 }
 
 section{
@@ -52,6 +52,7 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
   }
 
   .slot:first-child,
@@ -80,7 +81,7 @@ section{
     background-color: black;
 }
 
-.cell.x, .cell.o{
+.slot.x, .slot.o{
     cursor: not-allowed;
 }
 
@@ -90,8 +91,8 @@ section{
 
 .slot.x::before,
 .slot.x::after,
-.board.x .slot:hover::before,
-.board.x .slot:hover::after
+.board.x .slot:not(.x):not(.o):hover::before,
+.board.x .slot:not(.x):not(.o):hover::after
 {
     content: '';
     width: calc( var(--mark-size)* .15);
@@ -101,7 +102,7 @@ section{
 }
 
 .slot.x::before,
-.board.x .slot:hover::before
+.board.x .slot:not(.x):not(.o):hover::before
 {
     transform: rotate(45deg);
 }
@@ -112,7 +113,9 @@ section{
 }
 
 .slot.o::before,
-.slot.o::after
+.slot.o::after,
+.board.o .slot:not(.x):not(.o):hover::before,
+.board.o .slot:not(.x):not(.o):hover::after
 {
     content: '';
     width:  var(--mark-size);
@@ -132,12 +135,6 @@ section{
     height:  calc(var(--mark-size) * .7);
     background-color: white;
 }
-
-
-
-
-
-
 
 
 /* Mobile screen  */
