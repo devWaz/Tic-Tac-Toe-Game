@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,41 +10,35 @@
 }
 
 
-:root{
+:root {
     --slot-size: 100px;
     --mark-size: calc(var(--slot-size) * .9);
 }
 
-section{
+section {
     text-align: center;
 }
 
-.board {  
+.board {
     display: grid;
-    width: 25rem;
-    height: 25rem;
-    margin: auto;
-    margin-top: 2rem;
+    width: 100vw; /*25rem*/
+    height: 100vh;
+    /* margin: auto; */
+    margin-top: -5rem;
+    margin-bottom: -5rem;
     justify-content: center;
     align-content: center;
-    text-align: center;
-    grid-template-columns: 7.7rem 7.7rem 7.7rem;
+    grid-template-columns:  7.7rem 7.7rem 7.7rem;
     grid-template-rows: 7.7rem 7.7rem 7.7rem;
-    grid-auto-flow: row;
-    grid-template-areas:
-      ". . ."
-      ". . ."
-      ". . .";
-  }
+}
 
-  section h1{
+section h1 {
     font-family: Tarrget;
-    margin-top: 3rem;
+    margin-top: 1rem;
     font-size: 55px;
-  }
+}
 
-  .slot{
-    background-color: white;
+.slot {
     font-size: 50px;
     text-align: center;
     border: 2px solid black;
@@ -53,107 +47,108 @@ section{
     justify-content: center;
     align-items: center;
     position: relative;
-  }
+}
 
-  .slot:first-child,
-  .slot:nth-child(2),
-  .slot:nth-child(3){
-      border-top: none;
-  }
+.slot:first-child,
+.slot:nth-child(2),
+.slot:nth-child(3) {
+    border-top: none;
+}
 
-  .slot:nth-child(3n + 1){
-      border-left: none;
-  }
+.slot:nth-child(3n + 1) {
+    border-left: none;
+}
 
-  .slot:nth-child(3n + 3){
+.slot:nth-child(3n + 3) {
     border-right: none;
 }
 
 
 .slot:last-child,
 .slot:nth-child(8),
-.slot:nth-child(7){
+.slot:nth-child(7) {
     border-bottom: none;
 }
 
 .slot.x::before,
-.slot.x::after{
+.slot.x::after {
     background-color: black;
 }
 
-.slot.x, .slot.o{
+.slot.x,
+.slot.o {
     cursor: not-allowed;
 }
 
-.board.x .slot:hover{
-     
+.board.x .slot:not(.x):not(.o):hover::before,
+.board.x .slot:not(.x):not(.o):hover::after,
+.board.o .slot:not(.x):not(.o):hover::before {
+  background-color: lightgrey;
 }
 
 .slot.x::before,
 .slot.x::after,
 .board.x .slot:not(.x):not(.o):hover::before,
-.board.x .slot:not(.x):not(.o):hover::after
-{
+.board.x .slot:not(.x):not(.o):hover::after {
     content: '';
-    width: calc( var(--mark-size)* .15);
+    width: calc(var(--mark-size)* .15);
     height: var(--mark-size);
     background-color: blue;
     position: absolute;
 }
 
 .slot.x::before,
-.board.x .slot:not(.x):not(.o):hover::before
-{
+.board.x .slot:not(.x):not(.o):hover::before {
     transform: rotate(45deg);
 }
 
 .slot.x::after,
-.board.x .slot:hover::after{
+.board.x .slot:hover::after {
     transform: rotate(-45deg);
 }
 
 .slot.o::before,
 .slot.o::after,
 .board.o .slot:not(.x):not(.o):hover::before,
-.board.o .slot:not(.x):not(.o):hover::after
-{
+.board.o .slot:not(.x):not(.o):hover::after {
     content: '';
-    width:  var(--mark-size);
-    height: var(--mark-size);
     border-radius: 50%;
     position: absolute;
 }
 
-.slot.o::before{
-    width:  var(--mark-size);
+.slot.o::before {
+    width: var(--mark-size);
     height: var(--mark-size);
-    background-color: green;
+    background-color: red;
 }
 
-.slot.o::after{
-    width:  calc(var(--mark-size) * .7);
-    height:  calc(var(--mark-size) * .7);
+.slot.o::after {
+    width: calc(var(--mark-size) * .7);
+    height: calc(var(--mark-size) * .7);
     background-color: white;
 }
 
 
 /* Mobile screen  */
-@media screen and (max-width:375px){
-    section h1{
-        margin-top: 2rem;
+@media screen and (max-width:375px) {
+    section h1 {
+        margin-top: 1rem;
         font-size: 35px;
-      }
+    }
 
 
-      .board {  
+    .board {
         display: grid;
-        width: 16rem;
-        height: 16rem;
-        margin-top: 2rem;
+        width: 12rem;
+        height: 12rem;
+        
         text-align: center;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        margin: auto;
+        margin-top: 8rem;
+        margin-bottom: 7rem;
+        /* grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr; */
         grid-auto-flow: row;
-      }
+    }
 
 }
